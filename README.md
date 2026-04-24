@@ -28,7 +28,7 @@ An interactive 9x9 Sudoku solver that utilizes the **Constraint Satisfaction Pro
 ### Execution Steps
 ```bash
 pip install -r requirements.txt
-streamlit run app.py
+streamlit run sudoku.py
 ```
 
 ---
@@ -48,5 +48,5 @@ A Machine Learning web application using a **Random Forest Regressor** to predic
 ### Execution Steps
 ```bash
 pip install -r requirements.txt
-streamlit run app.py
+streamlit run student_predictor.py
 ```
