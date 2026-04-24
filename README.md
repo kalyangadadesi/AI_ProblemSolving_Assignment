@@ -6,32 +6,71 @@
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-This repository contains two **completely independent** web applications built from scratch using pure HTML, CSS, and Vanilla JavaScript. There is absolutely no backend or connection between them.
+This repository contains two **completely independent** web applications built from scratch using pure HTML, CSS, and Vanilla JavaScript. There is absolutely no backend or connection between them. Simply open the `index.html` file in your browser to run each app — no server required!
 
 ---
 
 ## 🧩 Problem 6: Sudoku Solver (Constraint Satisfaction Problem)
 
 ### Overview
-A completely self-contained web app that uses the **Constraint Satisfaction Problem (CSP)** backtracking algorithm written in JavaScript to instantly solve a 9x9 Sudoku puzzle directly in your browser.
+A completely self-contained web app that uses the **Constraint Satisfaction Problem (CSP)** backtracking algorithm written in JavaScript to instantly solve a 9×9 Sudoku puzzle directly in your browser.
 
-### 📸 Screenshot
-![Sudoku UI](assets/sudoku_html.png)
+### 📸 Screenshots
+
+**Input State — Empty Puzzle Grid**
+
+![Sudoku Input](assets/sudoku_input.png)
+
+**Output State — AI Auto-Solved via CSP Backtracking**
+
+![Sudoku Output](assets/sudoku_output.png)
 
 ### How to Run
-1. Navigate to the `Sudoku_Solver` folder.
-2. Double-click `index.html` to open it in your browser. No server required!
+```
+1. Navigate to the Sudoku_Solver folder.
+2. Double-click index.html to open it in your browser.
+```
 
 ---
 
 ## 📈 Problem 18: Student Performance Predictor (Machine Learning)
 
 ### Overview
-A purely client-side Machine Learning dashboard. Upon loading the page, it uses JavaScript to generate 200 synthetic data samples and runs a **Multiple Linear Regression (Gradient Descent)** training loop in the browser. It then accepts user inputs to predict final exam scores.
+A purely client-side Machine Learning dashboard. Upon loading the page, it generates 200 synthetic data samples and runs a **Multiple Linear Regression (Gradient Descent)** training loop entirely in the browser using JavaScript. It then accepts user inputs to predict final exam scores in real time.
 
-### 📸 Screenshot
-![Predictor UI](assets/predictor_html.png)
+### 📸 Screenshots
+
+**Input State — Student Metrics Entry Form**
+
+![Predictor Input](assets/predictor_input.png)
+
+**Output State — ML Predicted Exam Score**
+
+![Predictor Output](assets/predictor_output.png)
 
 ### How to Run
-1. Navigate to the `Student_Predictor` folder.
-2. Double-click `index.html` to open it in your browser. No server required!
+```
+1. Navigate to the Student_Predictor folder.
+2. Double-click index.html to open it in your browser.
+```
+
+---
+
+## 📂 Project Structure
+```
+AI ASSIGNMENT/
+├── README.md
+├── Sudoku_Solver/
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+├── Student_Predictor/
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+└── assets/
+    ├── sudoku_input.png
+    ├── sudoku_output.png
+    ├── predictor_input.png
+    └── predictor_output.png
+```
