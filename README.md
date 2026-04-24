@@ -6,7 +6,14 @@
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-This repository contains two **completely independent** web applications built from scratch using pure HTML, CSS, and Vanilla JavaScript. There is absolutely no backend or connection between them. Simply open the `index.html` file in your browser to run each app — no server required!
+This repository contains two **completely independent** web applications built from scratch using pure HTML, CSS, and Vanilla JavaScript. There is absolutely no backend or connection between them.
+
+## 🌐 Live Demo Links
+
+| Project | Live Demo |
+|---|---|
+| 🧩 Sudoku Solver (CSP) | [**Click Here to Try Live →**](https://kalyangadadesi.github.io/AI_ProblemSolving_Assignment/Sudoku_Solver/) |
+| 📈 Student Predictor (ML) | [**Click Here to Try Live →**](https://kalyangadadesi.github.io/AI_ProblemSolving_Assignment/Student_Predictor/) |
 
 ---
 
@@ -25,7 +32,10 @@ A completely self-contained web app that uses the **Constraint Satisfaction Prob
 
 ![Sudoku Output](assets/sudoku_output.png)
 
-### How to Run
+### 🌐 Live Demo
+👉 **[Try Sudoku Solver Live](https://kalyangadadesi.github.io/AI_ProblemSolving_Assignment/Sudoku_Solver/)**
+
+### How to Run Locally
 ```
 1. Navigate to the Sudoku_Solver folder.
 2. Double-click index.html to open it in your browser.
@@ -48,7 +58,10 @@ A purely client-side Machine Learning dashboard. Upon loading the page, it gener
 
 ![Predictor Output](assets/predictor_output.png)
 
-### How to Run
+### 🌐 Live Demo
+👉 **[Try Student Predictor Live](https://kalyangadadesi.github.io/AI_ProblemSolving_Assignment/Student_Predictor/)**
+
+### How to Run Locally
 ```
 1. Navigate to the Student_Predictor folder.
 2. Double-click index.html to open it in your browser.
