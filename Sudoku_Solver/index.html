@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Solver (CSP)</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧩 Sudoku Solver (CSP)</h1>
+            <p>An interactive, clean HTML/JS implementation of the Constraint Satisfaction Problem backtracking algorithm.</p>
+        </header>
+
+        <main>
+            <div id="sudoku-board" class="board"></div>
+            
+            <div class="controls">
+                <button id="btn-validate" class="btn btn-primary">✅ Validate Board</button>
+                <button id="btn-solve" class="btn btn-secondary">🤖 Auto Solve</button>
+                <button id="btn-reset" class="btn btn-danger">🔄 Reset</button>
+            </div>
+            
+            <div id="message-container" class="message hidden"></div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
