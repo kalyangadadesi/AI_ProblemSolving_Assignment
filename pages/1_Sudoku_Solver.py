@@ -194,50 +194,58 @@ def update_puzzle_from_cells():
 if "cell_0_0" not in st.session_state:
     update_cells_from_puzzle()
 
-st.markdown('<div class="sudoku-board">', unsafe_allow_html=True)
+with st.form("sudoku_grid_form", clear_on_submit=False):
+    st.markdown('<div class="sudoku-board">', unsafe_allow_html=True)
+    
+    # Render the 9x9 grid
+    for r in range(9):
+        cols = st.columns(9)
+        for c in range(9):
+            with cols[c]:
+                st.text_input(
+                    label=f"r{r}c{c}", 
+                    key=f"cell_{r}_{c}", 
+                    max_chars=1
+                    # removed on_change to allow form batching
+                )
+                
+    st.markdown('</div>', unsafe_allow_html=True)
+    
+    st.write("")
+    st.write("")
+    
+    # Action Buttons inside form
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        validate_pressed = st.form_submit_button("✅ Validate Board", use_container_width=True)
+    
+    with col2:
+        solve_pressed = st.form_submit_button("🤖 Prime Auto-Solve", use_container_width=True)
+        
+    with col3:
+        reset_pressed = st.form_submit_button("🔄 System Reset", use_container_width=True)
 
-# Render the 9x9 grid
-for r in range(9):
-    cols = st.columns(9)
-    for c in range(9):
-        with cols[c]:
-            st.text_input(
-                label=f"r{r}c{c}", 
-                key=f"cell_{r}_{c}", 
-                max_chars=1,
-                on_change=update_puzzle_from_cells # Sync state on every keypress
-            )
-            
-st.markdown('</div>', unsafe_allow_html=True)
+# Process form actions outside the layout
+if validate_pressed:
+    update_puzzle_from_cells()
+    is_won, msg = check_solution(st.session_state.puzzle)
+    if is_won:
+        st.success(msg)
+        st.balloons()
+    else:
+        st.error(msg)
 
-st.write("")
-st.write("")
-
-# Action Buttons
-col1, col2, col3 = st.columns(3)
-
-with col1:
-    if st.button("✅ Validate Board", use_container_width=True):
-        update_puzzle_from_cells()
-        is_won, msg = check_solution(st.session_state.puzzle)
-        if is_won:
-            st.success(msg)
-            st.balloons()
-        else:
-            st.error(msg)
-
-with col2:
-    if st.button("🤖 Prime Auto-Solve", use_container_width=True):
-        grid_copy = copy.deepcopy(initial_puzzle)
-        if solve_sudoku(grid_copy):
-            st.session_state.puzzle = grid_copy
-            update_cells_from_puzzle()
-            st.rerun()
-        else:
-            st.error("Algorithm failed. No solution exists!")
-
-with col3:
-    if st.button("🔄 System Reset", use_container_width=True):
-        st.session_state.puzzle = copy.deepcopy(initial_puzzle)
+if solve_pressed:
+    grid_copy = copy.deepcopy(initial_puzzle)
+    if solve_sudoku(grid_copy):
+        st.session_state.puzzle = grid_copy
         update_cells_from_puzzle()
         st.rerun()
+    else:
+        st.error("Algorithm failed. No solution exists!")
+
+if reset_pressed:
+    st.session_state.puzzle = copy.deepcopy(initial_puzzle)
+    update_cells_from_puzzle()
+    st.rerun()
